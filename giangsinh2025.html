@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>🎄 Merry Christmas 🎄</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(to bottom, #00111a, #003366);
+        overflow: hidden;
+        font-family: 'Segoe UI', sans-serif;
+        text-align: center;
+        color: white;
+    }
+
+    /* Chữ đổi màu */
+    h1 {
+        margin-top: 30px;
+        font-size: 40px;
+        animation: colorText 2s infinite;
+    }
+
+    @keyframes colorText {
+        0% { color: red; }
+        25% { color: yellow; }
+        50% { color: lime; }
+        75% { color: cyan; }
+        100% { color: red; }
+    }
+
+    /* Lời chúc */
+    .message {
+        font-size: 20px;
+        margin: 15px;
+        animation: glow 1.5s infinite alternate;
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 5px white; }
+        to { text-shadow: 0 0 15px yellow; }
+    }
+
+    /* Cây thông */
+    .tree {
+        font-size: 120px;
+        animation: treeColor 1s infinite;
+    }
+
+    @keyframes treeColor {
+        0% { color: green; }
+        50% { color: lime; }
+        100% { color: green; }
+    }
+
+    /* Ảnh Noel */
+    img {
+        width: 200px;
+        border-radius: 15px;
+        margin-top: 10px;
+        box-shadow: 0 0 20px white;
+    }
+
+    /* Tuyết rơi */
+    .snow {
+        position: fixed;
+        top: -10px;
+        color: white;
+        font-size: 15px;
+        user-select: none;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        to {
+            transform: translateY(110vh);
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<h1>🎅 MERRY CHRISTMAS 🎅</h1>
+
+<div class="message">
+    🎁 Chúc bạn một mùa Giáng Sinh an lành <br>
+    💖 Tràn đầy hạnh phúc & yêu thương <br>
+    ✨ Năm mới nhiều may mắn!
+</div>
+
+<div class="tree">🎄</div>
+
+<img src="https://i.imgur.com/0rZ5F5F.png" alt="Noel Image">
+
+<script>
+    function createSnow() {
+        const snow = document.createElement("div");
+        snow.className = "snow";
+        snow.innerHTML = "❄";
+        snow.style.left = Math.random() * window.innerWidth + "px";
+        snow.style.animationDuration = (3 + Math.random() * 5) + "s";
+        snow.style.opacity = Math.random();
+        snow.style.fontSize = (10 + Math.random() * 20) + "px";
+        document.body.appendChild(snow);
+
+        setTimeout(() => {
+            snow.remove();
+        }, 8000);
+    }
+
+    setInterval(createSnow, 150);
+</script>
+
+</body>
+</html>
